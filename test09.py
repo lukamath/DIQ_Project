@@ -8,9 +8,9 @@ import requests
 # input_file_path  = "D:/Politecnico/LM/Data and Information Quality/Project/movies.csv"
 #url =  "https://github.com/lukamath/DIQ_Project/blob/master/movies.csv"
 raw_url = "https://raw.githubusercontent.com/lukamath/DIQ_Project/master/movies.csv"
-local_path = 'D:/Politecnico/LM/Data and Information Quality/Project/downloaded_file08.csv'
-output_file_path = "D:/Politecnico/LM/Data and Information Quality/Project/cleaned_movies08.csv"
-M_file_path= "D:/Politecnico/LM/Data and Information Quality/Project/M_ending_List08.csv"
+local_path = 'D:/Politecnico/LM/Data and Information Quality/Project/downloaded_file09.csv'
+output_file_path = "D:/Politecnico/LM/Data and Information Quality/Project/cleaned_movies09.csv"
+M_file_path= "D:/Politecnico/LM/Data and Information Quality/Project/M_ending_List09.csv"
 
 
 # Download the file from the URL and save it locally
@@ -57,8 +57,9 @@ with open(local_path, 'r', encoding='utf-8') as input_file, \
         if ((len(line) >= 9 and marker0 in line and line[-9] != ')' and     \
             len(line) >= 9 and marker0 in line and line[-9] != ',') or      \
             (marker0 in line and len(line) < 8 )                    or      \
-            marker1 in line or marker2 in line or ('$'in line and 'M'in line)):
-
+            # marker1 in line or marker2 in line or ('$'in line and 'M'in line)):
+            marker2 in line or ('$'in line and line[-8] == 'M')):
+            
             if(line[-2]=='M'):
                 M_line=line.strip()
                 M_file.write(str(line_number) +  '{'+ M_line + '11111111'+ '\n')
