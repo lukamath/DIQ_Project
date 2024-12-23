@@ -32,7 +32,7 @@ output_file_path = "all_blocks_v5.csv"
 with open(output_file_path, "w", encoding="utf-8") as output_file:
 
     for i, block in enumerate(movie_blocks, 1):
-        output_file.write(f"Block {i}:\n")
+        # output_file.write(f"Block {i}:\n")
         output_file.write(block)
         output_file.write("\n" + "-" * 50 + "\n")  # Add a separator between blocks
 
