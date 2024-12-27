@@ -6,7 +6,8 @@ input_file_path = "movies.csv"  # Replace with your input file path
 # Read the normalized CSV file into a DataFrame
 df = pd.read_csv(input_file_path, encoding='utf-8')
 
-# Clean up STARS column
+# Clean up columns
+df['ONE-LINE'] = df['ONE-LINE'].str.lstrip('\n')
 df['STARS'] = df['STARS'].str.replace('\n', '').str.strip()
 df['GENRE'] = df['GENRE'].str.replace('\n', '').str.strip()
 # Display the first few rows to verify the data
