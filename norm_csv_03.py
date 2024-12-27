@@ -22,3 +22,7 @@ print(df.info())
 print(df['STARS'].head())
 print()
 print(df['GENRE'].head())
+
+# Export DataFrame to a CSV file
+output_file_path = 'moviesCleaned.csv'
+df.to_csv(output_file_path, index=False)  # index=False prevents writing the row indices to the CSV
