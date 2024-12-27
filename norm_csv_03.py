@@ -23,6 +23,8 @@ print(df.info())
 print(df['STARS'].head())
 print()
 print(df['GENRE'].head())
+print()
+print(df['ONE-LINE'].head())
 
 # Export DataFrame to a CSV file
 output_file_path = 'moviesCleaned.csv'
